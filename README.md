@@ -1,8 +1,8 @@
 nestedTest
 ==========
 
-# what is this
+# What is this
 Test for Nested
 
 # How run test
- $ phpunit test,php
+ $ phpunit test.php
