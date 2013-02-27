@@ -21,11 +21,10 @@ class Nested{
     return (int)$keySum;
   }
 
-  function show_tree($data)
+  function show_tree($data, $result = "")
   {
-    static $result = false;
     if( !is_array($data) ) {
-      return $result;
+      return false;
     }
     $end = false;
 
@@ -33,7 +32,7 @@ class Nested{
     foreach($data as $key => $value) {
       if (is_array($value)) {
         $result .=  "</li><li>" .  $key;
-        $this->show_tree($value);
+        $result .= $this->show_tree($value);
       } else {
         if ($end) {
           $result .=  "</li>";

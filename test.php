@@ -21,5 +21,16 @@ class bbrTest extends PHPUnit_Framework_TestCase
           3 => 'three'
         );
         $this->assertEquals(substr_count($nested->show_tree($array), '<ul>'),2);
+
+        $array = array(
+          1 => array(
+            11 => 'eleven'
+          ),
+          2 => array(
+            21 => 'thirty-one'
+          ),
+          3 => 'three'
+        );
+        $this->assertEquals(substr_count($nested->show_tree($array), '<ul>'),3);
     }
 }
